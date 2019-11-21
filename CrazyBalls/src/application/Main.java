@@ -22,7 +22,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Pelotas Crazys");
 			primaryStage.setScene(scene);
-			primaryStage.initStyle(StageStyle.DECORATED);
+			primaryStage.initStyle(StageStyle.DECORATED); 
 			primaryStage.show(); 
 			
 		} catch(Exception e) {

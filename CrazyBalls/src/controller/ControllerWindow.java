@@ -56,23 +56,31 @@ public class ControllerWindow implements Initializable{
 	}
 	
 	
-	public void draw(double x, double y) {
+	public void draw(double x, double y) { 
 		lienzo.drawImage(img1, 0, 0);
-		lienzo.setFill(Color.BLUE);
-		lienzo.fillOval(x, y, 30, 30);
-//		movementThread move = new movementThread(crazyGame.getBalls().get(i));
-//		paintThread paint = new paintThread(this);
-//		move.start();
-//		paint.start();	
-	}
-	public void addBalls() {
 		for (int i = 0; i < crazyGame.getBalls().size(); i++) {
 			double positionX = crazyGame.getBalls().get(i).getPosX();
 			double positionY = crazyGame.getBalls().get(i).getPosY();
 			double width = crazyGame.getBalls().get(i).getRadio();
 			lienzo.setFill(Color.AQUA);
-			lienzo.fillOval(positionX, positionY, width, width); 
+			lienzo.fillOval(positionX + x, positionY + y, width, width); 
 		}
+		/*
+		lienzo.setFill(Color.BLUE);
+		lienzo.fillOval(x, y, 30, 30);
+		*/
+//		movementThread move = new movementThread(crazyGame.getBalls().get(i));
+//		paintThread paint = new paintThread(this);
+//		move.start();
+//		paint.start();	
+	}
+	public void stopBalls() {
+		
+	}
+	public void showHalfOfFame() {
+		
+	}
+	public void alertWinner() {
 		
 	}
 

@@ -15,14 +15,14 @@ public class movementThread extends Thread{
 		int i = 0;
 			while(true) {
 //				if(pelota != null) {
-//					pelota.movement();
-					
-					controller.draw(i, 50);
+						//pelota.movement();
+				
+					controller.draw(i, 50); 
 					
 //				}
 				try {
 //					sleep(pelota.getEspera());
-					sleep(100);
+					sleep(10);
 				} catch (Exception e) {
 					// TODO: handle exception
 				}

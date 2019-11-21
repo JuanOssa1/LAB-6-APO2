@@ -8,8 +8,11 @@ public class Pelota {
 	private String direction;
 	private int rebotes;
 	private boolean detenida;
-	public static final double ADVANCE = 3.0;
+	public static final double MOVE = 2.5;
 	public static final String IZQUIERDA = "IZQUIERDA"; 
+	public static final String DERECHA = "DERECHA";
+	public static final String ARRIBA = "ARRIBA";
+	public static final String ABAJO = "ABAJO";
 	public Pelota(int radio, int posX, int posY, int espera, String direction, int rebotes, boolean detenida) {
 		super();
 		this.radio = radio;
@@ -58,7 +61,7 @@ public class Pelota {
 
 	public void setDirection(String direction) {
 		this.direction = direction;
-	}
+	} 
 
 	public int getRebotes() { 
 		return rebotes;
@@ -75,15 +78,22 @@ public class Pelota {
 	public void setDetenida(boolean detenida) {
 		this.detenida = detenida;
 	}
-	public void movement() {
+	
+	public int movement() {
 		try {
 			if(detenida != false) {
 				if(direction.equals(IZQUIERDA)) {
-					posX += ADVANCE;
+					posX += MOVE;
 				}
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		return posX;
 	}
+	public int bounce() {
+		return 0;
+	}
+	
+	
 }

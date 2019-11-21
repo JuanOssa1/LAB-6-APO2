@@ -9,8 +9,8 @@ public class paintThread extends Thread{
 	}
 	@Override
 	public void run(){
-		while(true) {
-			control.addBalls();
+		while(true) { 
+			//control.addBalls();
 		}
 	}
 }
