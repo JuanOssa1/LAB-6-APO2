@@ -12,13 +12,14 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = FXMLLoader.load(getClass().getResource("/application/Base.fxml"));
+			Pane root = FXMLLoader.load(getClass().getResource("/application/Base.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Pelotas Crazys");
 			primaryStage.setScene(scene);

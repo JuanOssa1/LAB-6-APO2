@@ -17,6 +17,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.CrazyGame;
@@ -29,7 +30,7 @@ public class ControllerWindow implements Initializable{
 	//public static String FLATGAME = "games//juego.txt";
 	private CrazyGame crazyGame;
 	@FXML
-	private BorderPane border;
+	private Pane border;
 	private Canvas canvas;
 	private GraphicsContext lienzo; 
 	private Image img1;
