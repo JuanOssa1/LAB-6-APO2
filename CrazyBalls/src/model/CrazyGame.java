@@ -21,7 +21,7 @@ public class CrazyGame {
 	private int nivel;
 	public ArrayList<Pelota> getBalls() {
 		return balls;
-	}
+	} 
 	public void setBalls(ArrayList<Pelota> balls) {
 		this.balls = balls;
 	}
@@ -42,14 +42,14 @@ public class CrazyGame {
 		balls = new ArrayList<Pelota>();
 		gamers = new ArrayList<Gamer>();
 		loadGame();
-		startProgramLoadGamers();
+		//startProgramLoadGamers();
 	}
 	public String loadGame() {	
 		String msg = "DATOS CARGADOS CON EXITO!!!";
 		String radio = "";
 		String posx = ""; 
 		String posy = "";
-		String espera = "";
+		String espera = ""; 
 		String direccion = "";
 		String rebotes = "";
 		String detenida = "";

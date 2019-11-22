@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,10 +35,12 @@ public class ControllerWindow implements Initializable{
 	private Canvas canvas;
 	private GraphicsContext lienzo; 
 	private Image img1;
+	//private Pelota pelotica;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		crazyGame = new CrazyGame();
+		
 	}
 	public void newGame() {
 		try {
@@ -47,34 +50,32 @@ public class ControllerWindow implements Initializable{
 			String path = "pictures//playa.jpg";
 			img1 = new Image(new File(path).toURI().toString());
 			lienzo.drawImage(img1, 0, 0);
-			movementThread mt = new movementThread(this);
-			mt.start();
-			//addBalls();
-	
+			arrancarHilos();
+			new AnimationTimer() {
+				public void handle(long now) {
+					draw();
+				}
+			}.start();
 		} catch(Exception e) {
 			e.printStackTrace(); 
-		}
+		} 
 	}
-	
-	
-	public void draw(double x, double y) { 
+	public void arrancarHilos() {
+		for (int i = 0; i < crazyGame.getBalls().size(); i++) {
+			new movementThread(this, crazyGame.getBalls().get(i)).start();
+		}
+	}	
+	public void draw() { 
 		lienzo.drawImage(img1, 0, 0);
 		for (int i = 0; i < crazyGame.getBalls().size(); i++) {
 			double positionX = crazyGame.getBalls().get(i).getPosX();
-			double positionY = crazyGame.getBalls().get(i).getPosY();
+			double positionY = crazyGame.getBalls().get(i).getPosY(); 
 			double width = crazyGame.getBalls().get(i).getRadio();
 			lienzo.setFill(Color.AQUA);
-			lienzo.fillOval(positionX + x, positionY + y, width, width); 
+			lienzo.fillOval(positionX, positionY, width, width); 
 		}
-		/*
-		lienzo.setFill(Color.BLUE);
-		lienzo.fillOval(x, y, 30, 30);
-		*/
-//		movementThread move = new movementThread(crazyGame.getBalls().get(i));
-//		paintThread paint = new paintThread(this);
-//		move.start();
-//		paint.start();	
 	}
+	
 	public void stopBalls() {
 		
 	}

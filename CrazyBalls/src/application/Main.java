@@ -21,10 +21,10 @@ public class Main extends Application {
 		try {
 			Pane root = FXMLLoader.load(getClass().getResource("/application/Base.fxml"));
 			Scene scene = new Scene(root);
-			primaryStage.setTitle("Pelotas Crazys");
+			primaryStage.setTitle("Pelotas Crazys"); 
 			primaryStage.setScene(scene);
 			primaryStage.initStyle(StageStyle.DECORATED); 
-			primaryStage.show(); 
+			primaryStage.show();  
 			
 		} catch(Exception e) {
 			e.printStackTrace();

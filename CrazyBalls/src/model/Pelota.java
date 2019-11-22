@@ -1,6 +1,12 @@
 package model;
 
+import java.io.File;
+
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 public class Pelota {
+	private MediaPlayer mediaPlayer;
 	private int radio;
 	private int posX;
 	private int posY;
@@ -79,21 +85,68 @@ public class Pelota {
 		this.detenida = detenida;
 	}
 	
-	public int movement() {
-		try {
-			if(detenida != false) {
-				if(direction.equals(IZQUIERDA)) {
-					posX += MOVE;
-				}
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
+	public void movement() {
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		if(direction.equals(IZQUIERDA)) {
+			posX += 12;
+		} else if(direction.equals(DERECHA)) {
+			posX += -12;
+		} else if(direction.equals(ARRIBA)) {
+			posY += 12;
+		} else {
+			posY += -12;
 		}
-		return posX;
+		 if(posX <= (0 + radio) || 
+                 posX >= (0+radio)){
+
+         	posX = -posX;
+
+         }
+*/
+		
+		if(direction.equals(IZQUIERDA)) {
+			posX += 12;
+		} else if(direction.equals(DERECHA)) {
+			posX += -12;
+		} else if(direction.equals(ARRIBA)) {
+			posY += 12;
+		} else {
+			posY += -12;
+		}
+		
 	}
 	public int bounce() {
 		return 0;
 	}
-	
+	public void playCrazyFrog() {
+		
+		String path = "pictures//amigosTraiganCerveza.mp3";
+		Media media = new Media(new File(path).toURI().toString());
+		mediaPlayer = new MediaPlayer(media);
+		mediaPlayer.setVolume(0.5);
+		mediaPlayer.play();
+		
+		
+	}
 	
 }
